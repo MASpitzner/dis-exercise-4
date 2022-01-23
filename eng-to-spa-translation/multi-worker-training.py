@@ -9,8 +9,8 @@ per_worker_batch_size = 32
 tf_config = json.loads(os.environ["TF_CONFIG"])
 num_workers = len(tf_config["cluster"]["worker"])
 
-strategy = tf.distribute.MultiWorkerMirroredStrategy()
-
+#strategy = tf.distribute.MultiWorkerMirroredStrategy()
+tf.distribute.MirroredStrategy(devices=["/gpu:0", "/gpu:1","/gpu:2","/gpu:3"])
 global_batch_size = per_worker_batch_size * num_workers
 train_ds, val_ds = base.eng_to_span_dataset(global_batch_size)
 
