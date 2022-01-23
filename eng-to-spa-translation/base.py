@@ -40,7 +40,7 @@ def eng_to_span_dataset(batch_size):
     We prepend the token `"[start]"` and we append the token `"[end]"` to the Spanish sentence.
     """
 
-    with open(text_file) as f:
+    with open(text_file,encoding="utf-8") as f:
         lines = f.read().split("\n")[:-1]
     text_pairs = []
     for line in lines:
