@@ -10,7 +10,7 @@ from timeit import default_timer as timer
 start = timer()
 per_worker_batch_size = 64
 
-tf_config = json.loads(os.environ["TF_CONFIG"])
+#tf_config = json.loads(os.environ["TF_CONFIG"])
 #num_workers = len(tf_config["cluster"]["worker"])
 
 #strategy = tf.distribute.MultiWorkerMirroredStrategy()
